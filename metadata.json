@@ -1,0 +1,6 @@
+{
+  "name": "Jay Computer - CSC Center",
+  "description": "Local CSC and computer service shop for government documents, online forms, printing, photocopy, lamination, insurance, and public utility services.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
