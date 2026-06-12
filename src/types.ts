@@ -11,6 +11,7 @@ export interface Service {
   descriptionGu: string;
   documentsEn: string[];
   documentsGu: string[];
+  popular?: boolean;
 }
 
 export interface SiteConfig {

@@ -27,29 +27,20 @@ export const EnquiryForm = () => {
     
     setIsSubmitted(true);
     
-    try {
-      const selectedService = services.find(s => s.id === formData.serviceId);
-      const serviceName = selectedService ? selectedService.titleEn : formData.serviceId;
-      
-      const response = await fetch('/api/enquiry', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          phone: formData.phone,
-          serviceId: serviceName,
-          message: formData.message,
-        }),
-      });
-      
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-    }
+    const selectedService = services.find(s => s.id === formData.serviceId);
+    const serviceName = selectedService ? selectedService.titleEn : formData.serviceId || 'General Inquiry';
+    
+    const text = `Hello Jay Computer,
+*New Enquiry Details:*
+*Name:* ${formData.name}
+*Phone:* ${formData.phone}
+*Requirement:* ${serviceName}
+*Message:* ${formData.message}`;
+
+    const waLink = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(text)}`;
+    
+    // Open WhatsApp URL
+    window.open(waLink, '_blank');
     
     setTimeout(() => {
       setIsSubmitted(false);
@@ -64,14 +55,14 @@ export const EnquiryForm = () => {
           
           <div className="text-center mb-10">
             <h2 className="text-3xl font-extrabold text-indigo-950 mb-4">Service Enquiry Form</h2>
-            <p className="text-slate-600 font-medium">Have a requirement? Fill the form and we will contact you shortly. <br/> કોઈ પ્રશ્ન હોય તો ફોર્મ ભરો, અમે ટૂંક સમયમાં તમારો સંપર્ક કરીશું.</p>
+            <p className="text-slate-600 font-medium">Have a requirement? Fill out the form below and we will prepare a WhatsApp message for you to send to us. <br/> કોઈ પ્રશ્ન હોય તો ફોર્મ ભરો, અમે WhatsApp દ્વારા સંપર્ક કરીશું.</p>
           </div>
 
           {isSubmitted ? (
             <div className="text-center py-16 bg-green-50 rounded-2xl border border-green-100">
               <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-green-800 mb-2">Enquiry Submitted!</h3>
-              <p className="text-green-600">Your details have been successfully received. We will get back to you soon.</p>
+              <h3 className="text-2xl font-bold text-green-800 mb-2">Redirecting to WhatsApp!</h3>
+              <p className="text-green-600">Your details are ready to be sent securely via your WhatsApp app.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -152,10 +143,10 @@ export const EnquiryForm = () => {
               <div className="pt-2">
                 <button 
                   type="submit" 
-                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-lg py-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2"
+                  className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold text-lg py-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2"
                 >
                   <Send size={20} />
-                  Submit Enquiry
+                  Send via WhatsApp
                 </button>
               </div>
 

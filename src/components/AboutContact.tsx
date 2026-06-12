@@ -11,7 +11,13 @@ export const AboutContact = () => {
           {/* About Us Content */}
           <div id="about">
             <h2 className="text-sm font-bold tracking-widest text-emerald-600 uppercase mb-2">About Us</h2>
-            <h3 className="text-3xl md:text-5xl font-extrabold text-indigo-950 mb-6">Trusted local partner for all services.</h3>
+            <h3 className="text-3xl md:text-5xl font-extrabold text-indigo-950 mb-4">Trusted local partner for all services.</h3>
+            
+            <div className="mb-6 space-y-1">
+              <h1 className="text-lg font-bold text-slate-800">CSC Services in Halvad</h1>
+              <h2 className="text-base font-semibold text-slate-700">Government Document Services</h2>
+              <h2 className="text-sm font-medium text-slate-600">RTO, LIC, PAN Card, Ration Card and Online Form Services</h2>
+            </div>
             
             <p className="text-lg text-slate-700 leading-relaxed mb-6">
               {siteConfig.aboutTextEn}

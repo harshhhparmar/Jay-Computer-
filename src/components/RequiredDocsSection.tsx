@@ -2,8 +2,8 @@ import { services } from '../data';
 import { getIcon } from './Icons';
 
 export const RequiredDocsSection = () => {
-  // Select top 6 services to show required documents
-  const featuredServices = services.slice(0, 6);
+  // Select popular services to show required documents
+  const featuredServices = services.filter(s => s.popular).slice(0, 6);
 
   return (
     <section id="documents" className="py-20 bg-white">
