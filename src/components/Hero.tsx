@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 
 export const Hero = () => {
   return (
-    <section id="home" className="relative pt-20 pb-12 md:pt-36 md:pb-28 overflow-hidden bg-gradient-to-br from-indigo-950 via-slate-900 to-indigo-900 z-0">
+    <section id="home" className="relative pt-10 pb-8 md:pt-36 md:pb-28 overflow-hidden bg-gradient-to-br from-indigo-950 via-slate-900 to-indigo-900 z-0">
       
       {/* Abstract Background Shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -21,7 +21,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-emerald-300 text-xs md:text-sm font-bold tracking-wider mb-4 md:mb-8 shadow-sm uppercase"
+          className="inline-flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1 md:py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-emerald-300 text-[10px] md:text-sm font-bold tracking-wider mb-4 md:mb-8 shadow-sm uppercase"
         >
           <ShieldCheck className="text-emerald-400 w-4 h-4 md:w-5 md:h-5" />
           No.1 Trusted CSC Center in Halvad
@@ -32,7 +32,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-3 md:mb-6 leading-tight max-w-5xl mx-auto"
+          className="text-[28px] sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-2 md:mb-6 leading-[1.1] md:leading-tight max-w-5xl mx-auto"
         >
           All <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Government Services</span> Under One Roof
         </motion.h1>
@@ -42,7 +42,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="max-w-3xl mx-auto text-base md:text-xl text-indigo-100 font-medium mb-3 md:mb-4 leading-relaxed"
+          className="max-w-3xl mx-auto text-sm md:text-xl text-indigo-100 font-medium mb-1.5 md:mb-4 leading-snug md:leading-relaxed"
         >
           Fast service, expert guidance, affordable charges, and trusted local support.
         </motion.p>
@@ -51,7 +51,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="max-w-3xl mx-auto text-sm md:text-lg text-emerald-300 font-medium font-gujarati mb-6 md:mb-10 leading-relaxed"
+          className="max-w-3xl mx-auto text-xs md:text-lg text-emerald-300 font-medium font-gujarati mb-5 md:mb-10 leading-snug md:leading-relaxed"
         >
           ઝડપી સેવા, યોગ્ય માર્ગદર્શન, વાજબી દર અને વિશ્વસનીય સ્થાનિક સહાય. તમામ સરકારી અને ઓનલાઈન કામગીરી માટે આજે જ મુલાકાત લો.
         </motion.p>
@@ -61,7 +61,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="grid grid-cols-2 sm:flex sm:flex-row flex-wrap justify-center items-center gap-2 md:gap-4 mb-8 md:mb-14"
+          className="grid grid-cols-2 sm:flex sm:flex-row flex-wrap justify-center items-center gap-1.5 md:gap-4 mb-6 md:mb-14"
         >
           <a href={`https://wa.me/${siteConfig.whatsapp}?text=Hello%20${encodeURIComponent(siteConfig.shopName)},%20I%20want%20to%20inquire%20about%20your%20services.`} target="_blank" rel="noopener noreferrer" 
              className="w-full sm:w-auto flex justify-center items-center gap-1.5 md:gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white px-3 md:px-8 py-3 md:py-4 rounded-xl text-sm sm:text-base md:text-lg font-bold transition-all shadow-lg shadow-[#25D366]/20 hover:shadow-[#25D366]/40 hover:-translate-y-1">
@@ -84,37 +84,12 @@ export const Hero = () => {
           </a>
         </motion.div>
 
-        {/* Highlight Feature Pills */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 max-w-5xl mx-auto mb-8 md:mb-12"
-        >
-          <div className="flex flex-col items-center justify-center p-3 md:p-5 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors">
-            <Zap className="text-amber-400 mb-1.5 md:mb-3 w-5 h-5 md:w-8 md:h-8" />
-            <span className="text-white font-semibold text-[10px] md:text-sm leading-tight text-center">Same-Day Assistance</span>
-          </div>
-          <div className="flex flex-col items-center justify-center p-3 md:p-5 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors">
-            <ShieldCheck className="text-emerald-400 mb-1.5 md:mb-3 w-5 h-5 md:w-8 md:h-8" />
-            <span className="text-white font-semibold text-[10px] md:text-sm leading-tight text-center">Govt. Scheme Support</span>
-          </div>
-          <div className="flex flex-col items-center justify-center p-3 md:p-5 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors">
-            <CheckCircle2 className="text-blue-400 mb-1.5 md:mb-3 w-5 h-5 md:w-8 md:h-8" />
-            <span className="text-white font-semibold text-[10px] md:text-sm leading-tight text-center">Document Verification</span>
-          </div>
-          <div className="flex flex-col items-center justify-center p-3 md:p-5 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors">
-            <FileText className="text-purple-400 mb-1.5 md:mb-3 w-5 h-5 md:w-8 md:h-8" />
-            <span className="text-white font-semibold text-[10px] md:text-sm leading-tight text-center">Online Form Filling</span>
-          </div>
-        </motion.div>
-
         {/* Social Proof Bar */}
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.7 }}
-          className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 md:gap-12 pt-6 md:pt-8 border-t border-white/10 max-w-4xl mx-auto"
+          className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 md:gap-12 pt-4 md:pt-8 border-t border-white/10 max-w-4xl mx-auto"
         >
           <div className="flex flex-col sm:flex-row items-center gap-2 md:gap-3">
             <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">

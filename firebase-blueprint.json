@@ -1,0 +1,47 @@
+{
+  "$schema": "https://raw.githubusercontent.com/firebase/bot-platform/main/schema.json",
+  "project": {
+    "extensions": []
+  },
+  "firestore": {
+    "collections": [
+      {
+        "id": "brochures",
+        "description": "Brochures and document lists available for download.",
+        "rules": {
+          "read": "true",
+          "write": "request.auth != null"
+        },
+        "schema": {
+          "fields": [
+            {
+              "name": "title",
+              "type": "string",
+              "description": "Title of the brochure/document."
+            },
+            {
+              "name": "description",
+              "type": "string",
+              "description": "Description of the document."
+            },
+            {
+              "name": "downloadUrl",
+              "type": "string",
+              "description": "URL to download the PDF."
+            },
+            {
+              "name": "category",
+              "type": "string",
+              "description": "Category of the brochure."
+            },
+            {
+              "name": "createdAt",
+              "type": "timestamp",
+              "description": "When the brochure was added."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
