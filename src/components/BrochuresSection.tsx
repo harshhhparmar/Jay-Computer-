@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { db } from '../lib/firebase';
+import { db, auth } from '../lib/firebase';
 import { collection, onSnapshot, addDoc, serverTimestamp, query, orderBy, deleteDoc, doc } from 'firebase/firestore';
-import { FileText, Download, Plus, X, ExternalLink, Trash2 } from 'lucide-react';
+import { signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, User } from 'firebase/auth';
+import { FileText, Download, Plus, X, ExternalLink, Trash2, LogOut } from 'lucide-react';
 
 interface Brochure {
   id: string;
@@ -16,6 +17,7 @@ export const BrochuresSection = () => {
   const [brochures, setBrochures] = useState<Brochure[]>([]);
   const [showAdmin, setShowAdmin] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState<User | null>(null);
 
   // Form state
   const [title, setTitle] = useState('');
@@ -25,8 +27,13 @@ export const BrochuresSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
+    const unsubscribeAuth = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      if (!currentUser) setShowAdmin(false);
+    });
+
     const q = query(collection(db, 'brochures'), orderBy('createdAt', 'desc'));
-    const unsubscribe = onSnapshot(q, (snapshot) => {
+    const unsubscribeDb = onSnapshot(q, (snapshot) => {
       const docs = snapshot.docs.map(doc => ({
         id: doc.id,
         ...doc.data()
@@ -38,13 +45,50 @@ export const BrochuresSection = () => {
       setLoading(false);
     });
 
-    return () => unsubscribe();
+    return () => {
+      unsubscribeAuth();
+      unsubscribeDb();
+    };
   }, []);
+
+  const handleAdminToggle = async () => {
+    if (!user) {
+      try {
+        const provider = new GoogleAuthProvider();
+        const result = await signInWithPopup(auth, provider);
+        if (result.user.email !== 'harshhhparmar007@gmail.com') {
+          alert('Unauthorized. Only the administrator can manage documents.');
+          await signOut(auth);
+          return;
+        }
+        setShowAdmin(true);
+      } catch (error) {
+        console.error("Login failed:", error);
+        alert("Failed to login to admin portal.");
+      }
+    } else {
+      if (user.email !== 'harshhhparmar007@gmail.com') {
+        alert('Unauthorized. Only the administrator can manage documents.');
+        return;
+      }
+      setShowAdmin(!showAdmin);
+    }
+  };
+
+  const handleLogout = async () => {
+    await signOut(auth);
+    setShowAdmin(false);
+  };
 
   const handleAddBrochure = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!title || !downloadUrl) return;
     
+    if (!user) {
+      alert("You must be logged in to add documents.");
+      return;
+    }
+
     setIsSubmitting(true);
     try {
       await addDoc(collection(db, 'brochures'), {
@@ -59,9 +103,9 @@ export const BrochuresSection = () => {
       setDownloadUrl('');
       setCategory('');
       setShowAdmin(false);
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error adding brochure: ", error);
-      alert("Failed to add brochure. You might not have permission.");
+      alert(`Failed to add brochure. ${error.message || "You might not have permission."}`);
     } finally {
       setIsSubmitting(false);
     }
@@ -89,13 +133,24 @@ export const BrochuresSection = () => {
             Download our service brochures, application forms, and essential document lists directly.
           </p>
           
-          <button 
-            onClick={() => setShowAdmin(!showAdmin)}
-            className="text-xs text-slate-400 hover:text-indigo-600 transition-colors absolute right-0 top-0"
-            title="Admin access"
-          >
-            Manage Documents
-          </button>
+          <div className="absolute right-0 top-0 flex flex-col items-end gap-2">
+            <button 
+              onClick={handleAdminToggle}
+              className="text-xs text-slate-400 hover:text-indigo-600 transition-colors"
+              title="Admin access"
+            >
+              Manage Documents
+            </button>
+            {user && (
+              <button 
+                onClick={handleLogout}
+                className="text-xs text-red-400 hover:text-red-600 transition-colors flex items-center gap-1"
+                title="Logout"
+              >
+                <LogOut size={12} /> Logout
+              </button>
+            )}
+          </div>
         </div>
 
         {showAdmin && (

@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
   projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "tactical-handbook-k6ppv",
@@ -14,3 +15,4 @@ const app = initializeApp(firebaseConfig);
 
 // Initialize Firestore with the specific database ID provided in the config
 export const db = getFirestore(app, "ai-studio-1a58e62c-0b68-4803-bbf5-54a529671515");
+export const auth = getAuth(app);
