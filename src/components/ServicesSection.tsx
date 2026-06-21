@@ -1,7 +1,20 @@
 import { useState, useMemo, useEffect } from 'react';
 import { services, siteConfig } from '../data';
 import { getIcon } from './Icons';
-import { Search, MapPin, ChevronDown, ChevronUp, FileText } from 'lucide-react';
+import { Search, MapPin, ChevronDown, ChevronUp, FileText, ShieldCheck, Shield, IdCard, GraduationCap, FileSignature, Landmark, Banknote, CarFront, Calculator, Users, LayoutGrid } from 'lucide-react';
+
+const categoryIcons: Record<string, any> = {
+  'LIC Services': ShieldCheck,
+  'Insurance Services': Shield,
+  'Government Schemes & Cards': IdCard,
+  'Student / Labour / Scholarship': GraduationCap,
+  'Government Documents': FileSignature,
+  'SBI / Banking Services': Landmark,
+  'Loan Services': Banknote,
+  'RTO Services': CarFront,
+  'Tax & Finance': Calculator,
+  'CSC Services': Users
+};
 
 export const ServicesSection = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -187,27 +200,32 @@ const ServiceCard = ({
           <div className="order-3 md:order-2 flex flex-wrap items-center justify-center gap-2 md:gap-3 mb-10 md:mb-12">
             <button
               onClick={() => setSelectedCategory(null)}
-              className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-sm ${
+              className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-sm flex items-center gap-2 ${
                 selectedCategory === null 
                   ? 'bg-indigo-600 text-white shadow-indigo-600/20 scale-105' 
                   : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 hover:text-indigo-600'
               }`}
             >
+              <LayoutGrid className="w-4 h-4" />
               All Services
             </button>
-            {categories.map(cat => (
-              <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-sm ${
-                  selectedCategory === cat 
-                    ? 'bg-indigo-600 text-white shadow-indigo-600/20 scale-105' 
-                    : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 hover:text-indigo-600'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
+            {categories.map(cat => {
+              const Icon = categoryIcons[cat] || LayoutGrid;
+              return (
+                <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-sm flex items-center gap-2 ${
+                    selectedCategory === cat 
+                      ? 'bg-indigo-600 text-white shadow-indigo-600/20 scale-105' 
+                      : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 hover:text-indigo-600'
+                  }`}
+                >
+                  <Icon className="w-4 h-4" />
+                  {cat}
+                </button>
+              );
+            })}
           </div>
 
           <div className="order-1 md:order-3 w-full">
