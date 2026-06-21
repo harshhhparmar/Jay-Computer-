@@ -1,6 +1,7 @@
 import { useState, FormEvent, useEffect } from 'react';
 import { services, siteConfig } from '../data';
 import { Send, CheckCircle } from 'lucide-react';
+import { motion } from 'motion/react';
 
 export const EnquiryForm = () => {
   const [formData, setFormData] = useState({
@@ -45,7 +46,13 @@ export const EnquiryForm = () => {
 
   return (
     <section id="enquiry" className="py-12 md:py-16 bg-indigo-900">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6 }}
+        className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
         <div className="bg-white rounded-3xl shadow-2xl overflow-hidden p-6 md:p-8">
           
           <div className="text-center mb-8">
@@ -149,7 +156,7 @@ export const EnquiryForm = () => {
           )}
 
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

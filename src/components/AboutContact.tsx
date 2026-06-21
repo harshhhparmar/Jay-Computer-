@@ -1,10 +1,17 @@
 import { siteConfig } from '../data';
 import { Phone, Mail, MapPin, Clock, Info } from 'lucide-react';
+import { motion } from 'motion/react';
 
 export const AboutContact = () => {
   return (
     <section id="contact" className="py-12 md:py-16 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6 }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
           
@@ -90,7 +97,7 @@ export const AboutContact = () => {
           </div>
 
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

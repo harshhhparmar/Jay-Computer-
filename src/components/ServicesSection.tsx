@@ -2,6 +2,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { services, siteConfig } from '../data';
 import { getIcon } from './Icons';
 import { Search, MapPin, ChevronDown, ChevronUp, FileText, ShieldCheck, Shield, IdCard, GraduationCap, FileSignature, Landmark, Banknote, CarFront, Calculator, Users, LayoutGrid } from 'lucide-react';
+import { motion } from 'motion/react';
 
 const categoryIcons: Record<string, any> = {
   'LIC Services': ShieldCheck,
@@ -16,12 +17,45 @@ const categoryIcons: Record<string, any> = {
   'CSC Services': Users
 };
 
+const ServiceSkeleton = () => (
+  <div className="bg-white rounded-3xl p-5 md:p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col h-full animate-pulse">
+    <div className="flex items-start gap-4 mb-3 md:mb-4">
+      <div className="w-12 h-12 md:w-14 md:h-14 bg-slate-200 rounded-2xl shrink-0"></div>
+      <div className="pt-1 flex-1">
+        <div className="h-5 bg-slate-200 rounded-full w-3/4 mb-2.5"></div>
+        <div className="h-3.5 bg-slate-100 rounded-full w-1/2"></div>
+      </div>
+    </div>
+    
+    <div className="space-y-2 mb-6 flex-grow mt-2">
+      <div className="h-3 bg-slate-100 rounded-full w-full"></div>
+      <div className="h-3 bg-slate-100 rounded-full w-5/6"></div>
+      <div className="h-3 bg-slate-100 rounded-full w-4/6"></div>
+    </div>
+    
+    <div className="pt-4 border-t border-slate-100 flex gap-2 sm:gap-3 mt-auto">
+      <div className="h-10 md:h-11 bg-slate-100 rounded-xl flex-1"></div>
+      <div className="h-10 md:h-11 bg-slate-100 rounded-xl flex-1"></div>
+    </div>
+  </div>
+);
+
 export const ServicesSection = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [clickCounts, setClickCounts] = useState<Record<string, number>>({});
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 250);
+    return () => clearTimeout(timer);
+  }, [selectedCategory]);
+
+  useEffect(() => {
+
     try {
       const stored = localStorage.getItem('jayComputerServiceClicks');
       if (stored) {
@@ -172,7 +206,13 @@ const ServiceCard = ({
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6 }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+      >
         
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-12">
           <h2 className="text-sm font-bold tracking-widest text-emerald-600 uppercase mb-2">Our Offerings</h2>
@@ -237,14 +277,18 @@ const ServiceCard = ({
                   <div className="h-px bg-slate-200 flex-grow max-w-[100px]"></div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
-                  {popularServices.map(service => (
-                    <ServiceCard 
-                      key={service.id}
-                      service={service}
-                      trackServiceClick={trackServiceClick}
-                      getWhatsAppLink={getWhatsAppLink}
-                    />
-                  ))}
+                  {isLoading ? (
+                    Array.from({ length: 4 }).map((_, i) => <ServiceSkeleton key={i} />)
+                  ) : (
+                    popularServices.map(service => (
+                      <ServiceCard 
+                        key={service.id}
+                        service={service}
+                        trackServiceClick={trackServiceClick}
+                        getWhatsAppLink={getWhatsAppLink}
+                      />
+                    ))
+                  )}
                 </div>
               </div>
             )}
@@ -259,7 +303,11 @@ const ServiceCard = ({
               <div className="h-px bg-slate-200 flex-grow max-w-[100px]"></div>
             </div>
 
-            {filteredServices.length > 0 ? (
+            {isLoading ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+                {Array.from({ length: 8 }).map((_, i) => <ServiceSkeleton key={i} />)}
+              </div>
+            ) : filteredServices.length > 0 ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
                 {filteredServices.map(service => (
                   <ServiceCard 
@@ -290,7 +338,7 @@ const ServiceCard = ({
             )}
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

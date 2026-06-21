@@ -3,6 +3,7 @@ import { db, auth } from '../lib/firebase';
 import { collection, onSnapshot, addDoc, serverTimestamp, query, orderBy, deleteDoc, doc } from 'firebase/firestore';
 import { signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, User } from 'firebase/auth';
 import { FileText, Download, Plus, X, Trash2, LogOut, Settings } from 'lucide-react';
+import { motion } from 'motion/react';
 
 interface Brochure {
   id: string;
@@ -124,7 +125,13 @@ export const BrochuresSection = () => {
 
   return (
     <section id="brochures" className="py-12 md:py-16 bg-indigo-50 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6 }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
         
         <div className="text-center mb-10 md:mb-12 relative">
           <h2 className="text-sm font-bold tracking-widest text-emerald-600 uppercase mb-2">Downloads</h2>
@@ -278,7 +285,7 @@ export const BrochuresSection = () => {
             ))}
           </div>
         )}
-      </div>
+      </motion.div>
     </section>
   );
 };
