@@ -7,7 +7,6 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { ServicesSection } from './components/ServicesSection';
 import { BrochuresSection } from './components/BrochuresSection';
-import { RequiredDocsSection } from './components/RequiredDocsSection';
 import { EnquiryForm } from './components/EnquiryForm';
 import { AboutContact } from './components/AboutContact';
 import { Footer } from './components/Footer';
@@ -21,7 +20,6 @@ export default function App() {
         <Hero />
         <ServicesSection />
         <BrochuresSection />
-        <RequiredDocsSection />
         <EnquiryForm />
         <AboutContact />
       </main>

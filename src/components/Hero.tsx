@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 
 export const Hero = () => {
   return (
-    <section id="home" className="relative pt-10 pb-8 md:pt-36 md:pb-28 overflow-hidden bg-gradient-to-br from-indigo-950 via-slate-900 to-indigo-900 z-0">
+    <section id="home" className="relative pt-28 pb-12 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-br from-indigo-950 via-slate-900 to-indigo-900 z-0">
       
       {/* Abstract Background Shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -68,7 +68,7 @@ export const Hero = () => {
             <MessageCircle className="w-4 h-4 md:w-6 md:h-6" /> <span className="truncate">WhatsApp Now</span>
           </a>
           
-          <a href={`tel:${siteConfig.phone.replace(/\D/g,'')}`} 
+          <a href={`tel:${siteConfig.phone.replace(/\\D/g,'')}`} 
              className="w-full sm:w-auto flex justify-center items-center gap-1.5 md:gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-3 md:px-8 py-3 md:py-4 rounded-xl text-sm sm:text-base md:text-lg font-bold transition-all shadow-lg shadow-indigo-600/20 hover:shadow-indigo-600/40 hover:-translate-y-1 border border-indigo-500">
             <Phone className="w-4 h-4 md:w-6 md:h-6" /> <span className="truncate">Call Now / કૉલ</span>
           </a>

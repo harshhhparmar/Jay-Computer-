@@ -29,7 +29,7 @@ export const AboutContact = () => {
 
             {/* Direct Contact Links */}
             <div className="flex flex-col sm:flex-row gap-4">
-               <a href={`tel:${siteConfig.phone.replace(/\D/g,'')}`} className="inline-flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl font-bold transition-colors">
+               <a href={`tel:${siteConfig.phone.replace(/\\D/g,'')}`} className="inline-flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl font-bold transition-colors">
                  <Phone size={18} /> Call us today
                </a>
             </div>

@@ -10,8 +10,8 @@ export const siteConfig: SiteConfig = {
   addressEn: "Bus Station Road, Halvad, Morbi - 363330",
   addressGu: "બસ સ્ટેશન રોડ, હળવદ, મોરબી - ૩૬૩૩૩૦",
   mapLink: "https://maps.google.com/?q=23.0225,72.5714",
-  workingHoursEn: "Monday - Saturday: 9:00 AM to 7:00 PM | Sunday: Closed",
-  workingHoursGu: "સોમવાર - શનિવાર: સવારે ૯:૦૦ થી સાંજે ૭:૦૦ | રવિવાર: રજા",
+  workingHoursEn: "Sunday - Friday: 9:00 AM to 7:00 PM | Saturday: Closed",
+  workingHoursGu: "રવિવાર - શુક્રવાર: સવારે ૯:૦૦ થી સાંજે ૭:૦૦ | શનિવાર: રજા",
   aboutTextEn: "Owner: Amit Parmar. Jay Computer provides trusted, quick, and affordable computer services, government documentation, insurance, RTO works, banking, and online application support to the local community. Our goal is to make digital services accessible to everyone with transparency and speed.",
   aboutTextGu: "માલિક: અમિત પરમાર. જય કોમ્પ્યુટર સ્થાનિક લોકોને વિશ્વસનીય, ઝડપી અને સસ્તી કોમ્પ્યુટર સેવાઓ, સરકારી દસ્તાવેજો, વીમો, બેંકિંગ અને ઓનલાઈન એપ્લિકેશન સપોર્ટ પૂરો પાડે છે. અમારો ધ્યેય બધા માટે ડિજિટલ સેવાઓને સરળ અને સુલભ બનાવવાનો છે.",
 };
@@ -37,13 +37,13 @@ export const services: Service[] = [
     id: 'vehicle-insurance',
     categoryEn: 'Insurance Services',
     categoryGu: 'વીમા સેવાઓ',
-    titleEn: 'Vehicle & Online General Insurance',
-    titleGu: 'વાહન અને સામાન્ય વીમો',
+    titleEn: 'Vehicle Insurance',
+    titleGu: 'વાહન વીમો',
     iconName: 'CarFront',
     descriptionEn: 'SBI General Insurance, Bike insurance, two-wheeler, four-wheeler, and commercial vehicle insurance.',
     descriptionGu: 'SBI જનરલ વીમો, બાઇકનો વીમો, ટુ-વ્હીલર, ફોર-વ્હીલરનો વીમો.',
-    documentsEn: ['RC Book', 'Previous Policy Copy', 'Aadhaar Card'],
-    documentsGu: ['RC બુક', 'જૂની પોલિસીની નકલ', 'આધાર કાર્ડ']
+    documentsEn: ['RC Book', 'Previous Insurance Details if any', 'Aadhaar Card'],
+    documentsGu: ['RC બુક', 'જૂની પોલિસીની નકલ (જો હોય તો)', 'આધાર કાર્ડ']
   },
 
   // 3. Government Schemes & Cards
@@ -85,8 +85,8 @@ export const services: Service[] = [
     iconName: 'HeartPulse',
     descriptionEn: 'Ayushman Health cards and ABHA Health ID generation.',
     descriptionGu: 'આયુષ્માન હેલ્થ કાર્ડ કઢાવવા અને ABHA હેલ્થ ID બનાવવાનું કામ.',
-    documentsEn: ['Aadhaar Card', 'Ration Card with Name inside', 'Mobile Number'],
-    documentsGu: ['આધાર કાર્ડ', 'રેશન કાર્ડ (જેમાં નામ હોય)', 'મોબાઈલ નંબર'],
+    documentsEn: ['Aadhaar Card', 'Ration Card with Name inside', 'Mobile Number', 'Income Certificate'],
+    documentsGu: ['આધાર કાર્ડ', 'રેશન કાર્ડ (જેમાં નામ હોય)', 'મોબાઈલ નંબર', 'આવક નો દાખલો'],
     popular: true
   },
   {
@@ -165,11 +165,11 @@ export const services: Service[] = [
     documentsGu: ['આધાર કાર્ડ', 'બેંક પાસબુક', 'રેશન કાર્ડ']
   },
 
-  // 4. Mamlatdar Office Related Services
+  // 4. Government Documents
   {
     id: 'mamlatdar-certificates',
-    categoryEn: 'Mamlatdar Office Services',
-    categoryGu: 'મામલતદાર કચેરીના દાખલા',
+    categoryEn: 'Government Documents',
+    categoryGu: 'સરકારી ડોક્યુમેન્ટ્સ',
     titleEn: 'Income, Caste, EWS & Domicile',
     titleGu: 'આવક, જાતિ, EWS અને રહેઠાણનો દાખલો',
     iconName: 'Award',
@@ -181,8 +181,8 @@ export const services: Service[] = [
   },
   {
     id: 'ration-card',
-    categoryEn: 'Mamlatdar Office Services',
-    categoryGu: 'મામલતદાર કચેરીના દાખલા',
+    categoryEn: 'Government Documents',
+    categoryGu: 'સરકારી ડોક્યુમેન્ટ્સ',
     titleEn: 'Ration Card Support',
     titleGu: 'રેશન કાર્ડ સંબંધિત કામગીરી',
     iconName: 'FileText',
@@ -193,11 +193,11 @@ export const services: Service[] = [
     popular: true
   },
 
-  // 5. Registration & Certificate Services
+  // 5. Registration & Certificates
   {
     id: 'birth-death-marriage',
-    categoryEn: 'Registration & Certificates',
-    categoryGu: 'રજીસ્ટ્રેશન અને પ્રમાણપત્રો',
+    categoryEn: 'Government Documents',
+    categoryGu: 'સરકારી ડોક્યુમેન્ટ્સ',
     titleEn: 'Birth, Death & Marriage Registration',
     titleGu: 'જન્મ, મરણ અને લગ્ન નોંધણી',
     iconName: 'FileSignature',
@@ -267,8 +267,8 @@ export const services: Service[] = [
   // 9. Existing Shop Services
   {
     id: 'pan-card',
-    categoryEn: 'Identity & Shop Services',
-    categoryGu: 'ઓળખ કાર્ડ અને ઝેરોક્ષ',
+    categoryEn: 'CSC Services',
+    categoryGu: 'CSC સેવાઓ',
     titleEn: 'PAN Card Services',
     titleGu: 'પાન કાર્ડ સેવાઓ',
     iconName: 'CreditCard',
@@ -280,20 +280,20 @@ export const services: Service[] = [
   },
   {
     id: 'aadhaar-election',
-    categoryEn: 'Identity & Shop Services',
-    categoryGu: 'ઓળખ કાર્ડ અને ઝેરોક્ષ',
+    categoryEn: 'CSC Services',
+    categoryGu: 'CSC સેવાઓ',
     titleEn: 'Aadhaar & Election Card Print',
     titleGu: 'આધાર અને ચૂંટણી કાર્ડ પ્રિન્ટ',
     iconName: 'Fingerprint',
     descriptionEn: 'Aadhaar printouts, PVC card orders, Voter ID/Election card print.',
     descriptionGu: 'આધાર કાર્ડની પ્રિન્ટ, PVC કાર્ડ ઓર્ડર, અને ચૂંટણી કાર્ડ પ્રિન્ટ.',
     documentsEn: ['Aadhaar Number / Enrolment ID', 'Registered Mobile Number'],
-    documentsGu: ['આધાર નંબર / નોંધણી નંબર', 'રજીસ્ટર્ડ મોબાઈલ નંબર']
+    documentsGu: ['આધાર નંબર / નોંધણી નંબર']
   },
   {
     id: 'printing-xerox-form',
-    categoryEn: 'Identity & Shop Services',
-    categoryGu: 'ઓળખ કાર્ડ અને ઝેરોક્ષ',
+    categoryEn: 'CSC Services',
+    categoryGu: 'CSC સેવાઓ',
     titleEn: 'Online Forms, Print & Xerox',
     titleGu: 'ઓનલાઈન ફોર્મ, પ્રિન્ટ અને ઝેરોક્ષ',
     iconName: 'Printer',

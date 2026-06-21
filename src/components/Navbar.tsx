@@ -15,7 +15,7 @@ export const Navbar = () => {
   const navLinks = [
     { name: 'Home', gu: 'હોમ', href: '#home' },
     { name: 'Services', gu: 'સેવાઓ', href: '#services' },
-    { name: 'Documents', gu: 'ડોક્યુમેન્ટ્સ', href: '#documents' },
+    { name: 'Brochures', gu: 'બ્રોશર', href: '#brochures' },
     { name: 'About Us', gu: 'અમારા વિશે', href: '#about' },
     { name: 'Contact', gu: 'સંપર્ક', href: '#contact' },
   ];
@@ -43,7 +43,7 @@ export const Navbar = () => {
               </a>
             ))}
             <a 
-              href={`tel:${siteConfig.phone.replace(/\D/g,'')}`}
+              href={`tel:${siteConfig.phone.replace(/\\D/g,'')}`}
               className={`flex items-center gap-2 px-4 py-2 rounded-full font-bold transition-transform hover:scale-105 ${isScrolled ? 'bg-indigo-600 text-white' : 'bg-emerald-500 text-white'}`}
             >
               <Phone size={16} />
@@ -78,7 +78,7 @@ export const Navbar = () => {
               </a>
             ))}
             <a 
-              href={`tel:${siteConfig.phone.replace(/\D/g,'')}`}
+              href={`tel:${siteConfig.phone.replace(/\\D/g,'')}`}
               className="mt-4 flex justify-center items-center gap-2 w-full mx-auto max-w-[200px] px-6 py-3 rounded-full bg-indigo-600 text-white font-bold"
             >
               <Phone size={18} />

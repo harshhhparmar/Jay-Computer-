@@ -30,12 +30,7 @@ export const EnquiryForm = () => {
     const selectedService = services.find(s => s.id === formData.serviceId);
     const serviceName = selectedService ? selectedService.titleEn : formData.serviceId || 'General Inquiry';
     
-    const text = `Hello Jay Computer,
-*New Enquiry Details:*
-*Name:* ${formData.name}
-*Phone:* ${formData.phone}
-*Requirement:* ${serviceName}
-*Message:* ${formData.message}`;
+    const text = `Hello Jay Computer,\n*New Enquiry Details:*\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Requirement:* ${serviceName}\n*Message:* ${formData.message}`;
 
     const waLink = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(text)}`;
     

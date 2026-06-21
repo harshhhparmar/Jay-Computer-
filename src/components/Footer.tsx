@@ -24,7 +24,7 @@ export const Footer = () => {
             <ul className="space-y-3">
               <li><a href="#home" className="text-slate-400 hover:text-emerald-400 transition-colors">Home</a></li>
               <li><a href="#services" className="text-slate-400 hover:text-emerald-400 transition-colors">Services</a></li>
-              <li><a href="#documents" className="text-slate-400 hover:text-emerald-400 transition-colors">Documents Required</a></li>
+              <li><a href="#brochures" className="text-slate-400 hover:text-emerald-400 transition-colors">Brochures</a></li>
               <li><a href="#about" className="text-slate-400 hover:text-emerald-400 transition-colors">About Us</a></li>
               <li><a href="#contact" className="text-slate-400 hover:text-emerald-400 transition-colors">Contact Information</a></li>
             </ul>
