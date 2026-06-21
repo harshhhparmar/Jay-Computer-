@@ -4,9 +4,9 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-slate-950 pt-16 pb-8 border-t-4 border-indigo-500">
+    <footer className="bg-slate-950 pt-12 pb-8 border-t-4 border-indigo-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 mb-8">
           
           {/* Brand Info */}
           <div className="md:col-span-5">

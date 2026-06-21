@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 
 export const Hero = () => {
   return (
-    <section id="home" className="relative pt-28 pb-12 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-br from-indigo-950 via-slate-900 to-indigo-900 z-0">
+    <section id="home" className="relative pt-24 pb-12 md:pt-32 md:pb-20 overflow-hidden bg-gradient-to-br from-indigo-950 via-slate-900 to-indigo-900 z-0">
       
       {/* Abstract Background Shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -21,7 +21,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1 md:py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-emerald-300 text-[10px] md:text-sm font-bold tracking-wider mb-4 md:mb-8 shadow-sm uppercase"
+          className="inline-flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1 md:py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-emerald-300 text-[10px] md:text-sm font-bold tracking-wider mb-4 md:mb-6 shadow-sm uppercase"
         >
           <ShieldCheck className="text-emerald-400 w-4 h-4 md:w-5 md:h-5" />
           No.1 Trusted CSC Center in Halvad
@@ -32,7 +32,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-[28px] sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-2 md:mb-6 leading-[1.1] md:leading-tight max-w-5xl mx-auto"
+          className="text-[28px] sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-2 md:mb-4 leading-[1.1] md:leading-tight max-w-5xl mx-auto"
         >
           All <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Government Services</span> Under One Roof
         </motion.h1>

@@ -154,14 +154,14 @@ const ServiceCard = ({
 };
 
   return (
-    <section id="services" className="py-20 bg-slate-50 relative overflow-hidden">
+    <section id="services" className="py-12 md:py-16 bg-slate-50 relative overflow-hidden">
       
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-12">
           <h2 className="text-sm font-bold tracking-widest text-emerald-600 uppercase mb-2">Our Offerings</h2>
           <h3 className="text-3xl md:text-5xl font-extrabold text-indigo-950 mb-4">Our Services</h3>
           <p className="text-lg text-slate-600 font-gujarati font-medium">અમારી સેવાઓ - બધી જ સેવાઓ ઉત્તમ અને સચોટ માર્ગદર્શન સાથે અહીંથી મળી રહેશે.</p>
@@ -184,7 +184,7 @@ const ServiceCard = ({
           </div>
 
           {/* Categories Filter */}
-          <div className="order-3 md:order-2 flex flex-wrap items-center justify-center gap-2 md:gap-3 mb-16">
+          <div className="order-3 md:order-2 flex flex-wrap items-center justify-center gap-2 md:gap-3 mb-10 md:mb-12">
             <button
               onClick={() => setSelectedCategory(null)}
               className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-sm ${
@@ -212,13 +212,13 @@ const ServiceCard = ({
 
           <div className="order-1 md:order-3 w-full">
             {!searchTerm && !selectedCategory && popularServices.length > 0 && (
-              <div className="mb-20">
+              <div className="mb-12">
                 <div className="flex items-center justify-center gap-4 mb-8">
                   <div className="h-px bg-slate-200 flex-grow max-w-[100px]"></div>
                   <h4 className="text-xl md:text-2xl font-bold text-slate-800 text-center">🏆 Frequently Used Services</h4>
                   <div className="h-px bg-slate-200 flex-grow max-w-[100px]"></div>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
                   {popularServices.map(service => (
                     <ServiceCard 
                       key={service.id}
@@ -242,7 +242,7 @@ const ServiceCard = ({
             </div>
 
             {filteredServices.length > 0 ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
                 {filteredServices.map(service => (
                   <ServiceCard 
                     key={service.id}

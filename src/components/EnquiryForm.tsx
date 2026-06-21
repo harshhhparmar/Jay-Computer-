@@ -44,11 +44,11 @@ export const EnquiryForm = () => {
   };
 
   return (
-    <section id="enquiry" className="py-20 bg-indigo-900">
+    <section id="enquiry" className="py-12 md:py-16 bg-indigo-900">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden p-8 md:p-12">
+        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden p-6 md:p-8">
           
-          <div className="text-center mb-10">
+          <div className="text-center mb-8">
             <h2 className="text-3xl font-extrabold text-indigo-950 mb-4">Service Enquiry Form</h2>
             <p className="text-slate-600 font-medium">Have a requirement? Fill out the form below and we will prepare a WhatsApp message for you to send to us. <br/> કોઈ પ્રશ્ન હોય તો ફોર્મ ભરો, અમે WhatsApp દ્વારા સંપર્ક કરીશું.</p>
           </div>

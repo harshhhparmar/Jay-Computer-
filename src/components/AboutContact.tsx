@@ -3,10 +3,10 @@ import { Phone, Mail, MapPin, Clock, Info } from 'lucide-react';
 
 export const AboutContact = () => {
   return (
-    <section id="contact" className="py-20 bg-slate-50">
+    <section id="contact" className="py-12 md:py-16 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
           
           {/* About Us Content */}
           <div id="about">
@@ -23,7 +23,7 @@ export const AboutContact = () => {
               {siteConfig.aboutTextEn}
             </p>
             
-            <p className="text-lg text-slate-700 leading-relaxed font-gujarati bg-white p-6 rounded-2xl border-l-4 border-emerald-500 shadow-sm mb-10">
+            <p className="text-lg text-slate-700 leading-relaxed font-gujarati bg-white p-6 rounded-2xl border-l-4 border-emerald-500 shadow-sm mb-8">
               {siteConfig.aboutTextGu}
             </p>
 
