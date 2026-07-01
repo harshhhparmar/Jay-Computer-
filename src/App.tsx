@@ -3,7 +3,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { ServicesSection } from './components/ServicesSection';
@@ -12,6 +11,7 @@ import { EnquiryForm } from './components/EnquiryForm';
 import { AboutContact } from './components/AboutContact';
 import { Footer } from './components/Footer';
 import { WhatsAppButton } from './components/WhatsAppButton';
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 export default function App() {
   return (

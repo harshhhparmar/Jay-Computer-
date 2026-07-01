@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { services, siteConfig } from '../data';
 import { getIcon } from './Icons';
 import { Search, MapPin, ChevronDown, ChevronUp, FileText, ShieldCheck, Shield, IdCard, GraduationCap, FileSignature, Landmark, Banknote, CarFront, Calculator, Users, LayoutGrid } from 'lucide-react';
@@ -110,14 +110,14 @@ export const ServicesSection = () => {
     return `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(message)}`;
   };
 
-const ServiceCard = ({ 
-  service, 
-  trackServiceClick, 
-  getWhatsAppLink 
-}: { 
+const ServiceCard: React.FC<{ 
   service: typeof services[0];
   trackServiceClick: (id: string) => void;
   getWhatsAppLink: (name: string) => string;
+}> = ({ 
+  service, 
+  trackServiceClick, 
+  getWhatsAppLink 
 }) => {
   const [showDocs, setShowDocs] = useState(false);
 

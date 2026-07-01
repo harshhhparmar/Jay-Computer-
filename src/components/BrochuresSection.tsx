@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { db, auth } from '../lib/firebase';
 import { collection, onSnapshot, addDoc, serverTimestamp, query, orderBy, deleteDoc, doc } from 'firebase/firestore';
 import { signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, User } from 'firebase/auth';
@@ -57,18 +57,24 @@ export const BrochuresSection = () => {
       try {
         const provider = new GoogleAuthProvider();
         const result = await signInWithPopup(auth, provider);
-        if (result.user.email !== 'harshhhparmar007@gmail.com') {
+        if (result.user.email?.toLowerCase() !== 'harshhhparmar007@gmail.com') {
           alert('Unauthorized. Only the administrator can manage documents.');
           await signOut(auth);
           return;
         }
         setShowAdmin(true);
-      } catch (error) {
+      } catch (error: any) {
         console.error("Login failed:", error);
-        alert("Failed to login to admin portal.");
+        if (error.code === 'auth/unauthorized-domain') {
+          alert(`Domain not authorized for OAuth. Please add "${window.location.hostname}" to Firebase Console -> Authentication -> Settings -> Authorized domains.`);
+        } else if (error.code === 'auth/popup-blocked') {
+          alert('Login popup blocked by your browser. Please allow popups or try opening the app in a new tab.');
+        } else {
+          alert(`Failed to login: ${error.message}`);
+        }
       }
     } else {
-      if (user.email !== 'harshhhparmar007@gmail.com') {
+      if (user.email?.toLowerCase() !== 'harshhhparmar007@gmail.com') {
         alert('Unauthorized. Only the administrator can manage documents.');
         return;
       }
