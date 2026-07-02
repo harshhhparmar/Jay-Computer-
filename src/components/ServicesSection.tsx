@@ -121,6 +121,16 @@ const ServiceCard: React.FC<{
 }) => {
   const [showDocs, setShowDocs] = useState(false);
 
+  // Map specific service IDs to detailed pages
+  const detailedPages: Record<string, string> = {
+    'ayushman-card': '/services/ayushman-abha-card',
+    'mamlatdar-certificates': '/services/certificates',
+    'lic-services': '/services/lic-premium',
+    'e-kutir': '/services/e-kutir'
+  };
+
+  const pageLink = detailedPages[service.id];
+
   return (
     <div 
       className="group bg-white rounded-3xl p-5 md:p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.1)] hover:-translate-y-1 hover:border-indigo-100 transition-all duration-300 flex flex-col h-full"
@@ -175,7 +185,7 @@ const ServiceCard: React.FC<{
         </div>
       )}
       
-      <div className="pt-4 border-t border-slate-100 flex gap-2 sm:gap-3 mt-auto">
+      <div className="pt-4 border-t border-slate-100 flex flex-wrap gap-2 sm:gap-3 mt-auto">
         <a 
           href={getWhatsAppLink(service.titleEn)}
           target="_blank"
@@ -186,7 +196,7 @@ const ServiceCard: React.FC<{
           WhatsApp
         </a>
         <a 
-          href="#enquiry" 
+          href="/#enquiry" 
           onClick={() => {
             trackServiceClick(service.id);
             window.dispatchEvent(new CustomEvent('selectService', { detail: service.id }));
@@ -195,6 +205,19 @@ const ServiceCard: React.FC<{
         >
           Enquire
         </a>
+        {pageLink && (
+          <a
+            href={pageLink}
+            onClick={(e) => {
+              e.preventDefault();
+              trackServiceClick(service.id);
+              window.location.href = pageLink;
+            }}
+            className="w-full inline-flex items-center justify-center bg-blue-50 hover:bg-blue-600 text-blue-700 hover:text-white py-3 md:py-2.5 px-2 rounded-xl transition-all duration-300 text-xs md:text-sm font-bold shadow-sm mt-1"
+          >
+            Learn More
+          </a>
+        )}
       </div>
     </div>
   );

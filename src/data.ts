@@ -90,6 +90,41 @@ export const services: Service[] = [
     popular: true
   },
   {
+    id: 'e-kutir',
+    categoryEn: 'Government Schemes & Cards',
+    categoryGu: 'સરકારી યોજનાઓ અને કાર્ડ',
+    titleEn: 'Manav Garima Yojana (E-Kutir)',
+    titleGu: 'માનવ ગરિમા યોજના (E-Kutir)',
+    iconName: 'Briefcase',
+    descriptionEn: 'Free business tool-kits for marginalized individuals to become self-employed under Government of Gujarat.',
+    descriptionGu: 'રોજગાર માટે વિવિધ વ્યવસાયોની ટૂલકિટ સહાય (ગુજરાત સરકાર).',
+    documentsEn: [
+      'Aadhar Card',
+      'Ration Card',
+      'Residence Proof (Light Bill/Voter ID)',
+      'Caste Certificate (If applicable)',
+      'Income Certificate (Limit: ₹6 Lakh, SC most backward has no limit)',
+      'Bank Passbook',
+      'Passport Size Photo',
+      'Vocational Training Certificate (If any)',
+      'E Shram Card',
+      'Self-declaration'
+    ],
+    documentsGu: [
+      'આધાર કાર્ડ',
+      'રેશન કાર્ડ',
+      'રહેઠાણનો પુરાવો (લાઈટ બિલ/ચૂંટણી કાર્ડ)',
+      'જાતિનો દાખલો (જો લાગુ પડે)',
+      'આવકનો દાખલો',
+      'બેંક પાસબુક',
+      'પાસપોર્ટ સાઇઝ ફોટો',
+      'તાલીમનું પ્રમાણપત્ર (જો હોય તો)',
+      'ઈ-શ્રમ કાર્ડ',
+      'સ્વઘોષણાપત્ર'
+    ],
+    popular: true
+  },
+  {
     id: 'pm-schemes',
     categoryEn: 'Government Schemes & Cards',
     categoryGu: 'સરકારી યોજનાઓ અને કાર્ડ',
