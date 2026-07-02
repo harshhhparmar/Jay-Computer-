@@ -12,6 +12,7 @@ import { AboutContact } from './components/AboutContact';
 import { Footer } from './components/Footer';
 import { WhatsAppButton } from './components/WhatsAppButton';
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
       <Footer />
       <WhatsAppButton />
       <SpeedInsights />
+      <Analytics />
     </div>
   );
 }
