@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { services, siteConfig } from '../data';
 import { getIcon } from './Icons';
 import { Search, MapPin, ChevronDown, ChevronUp, FileText, ShieldCheck, Shield, IdCard, GraduationCap, FileSignature, Landmark, Banknote, CarFront, Calculator, Users, LayoutGrid } from 'lucide-react';
@@ -120,13 +121,15 @@ const ServiceCard: React.FC<{
   getWhatsAppLink 
 }) => {
   const [showDocs, setShowDocs] = useState(false);
+  const navigate = useNavigate();
 
   // Map specific service IDs to detailed pages
   const detailedPages: Record<string, string> = {
     'ayushman-card': '/services/ayushman-abha-card',
     'mamlatdar-certificates': '/services/certificates',
     'lic-services': '/services/lic-premium',
-    'e-kutir': '/services/e-kutir'
+    'e-kutir': '/services/e-kutir',
+    'e-nirman-scholarship': '/services/e-nirman-scholarship'
   };
 
   const pageLink = detailedPages[service.id];
@@ -206,17 +209,16 @@ const ServiceCard: React.FC<{
           Enquire
         </a>
         {pageLink && (
-          <a
-            href={pageLink}
+          <button
             onClick={(e) => {
               e.preventDefault();
               trackServiceClick(service.id);
-              window.location.href = pageLink;
+              navigate(pageLink);
             }}
             className="w-full inline-flex items-center justify-center bg-blue-50 hover:bg-blue-600 text-blue-700 hover:text-white py-3 md:py-2.5 px-2 rounded-xl transition-all duration-300 text-xs md:text-sm font-bold shadow-sm mt-1"
           >
             Learn More
-          </a>
+          </button>
         )}
       </div>
     </div>

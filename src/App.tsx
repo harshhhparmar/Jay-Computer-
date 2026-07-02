@@ -19,6 +19,7 @@ import { AyushmanCardPage } from './pages/AyushmanCardPage';
 import { CertificatesPage } from './pages/CertificatesPage';
 import { LICServicesPage } from './pages/LICServicesPage';
 import { EKutirPage } from './pages/EKutirPage';
+import { ENirmanScholarshipPage } from './pages/ENirmanScholarshipPage';
 
 const Home = () => (
   <main>
@@ -43,6 +44,7 @@ export default function App() {
             <Route path="/services/certificates" element={<CertificatesPage />} />
             <Route path="/services/lic-premium" element={<LICServicesPage />} />
             <Route path="/services/e-kutir" element={<EKutirPage />} />
+            <Route path="/services/e-nirman-scholarship" element={<ENirmanScholarshipPage />} />
           </Routes>
         </div>
         <Footer />

@@ -1,4 +1,4 @@
-import { Calendar, Award, Fingerprint, Calculator, FileText, CreditCard, HeartPulse, GraduationCap, ShieldCheck, Printer, Users, CheckCircle2, Car, CarFront, MapPin, Phone, MessageCircle, Clock, Mail, Info, FileStack, ChevronRight, IdCard, Landmark, Home, Briefcase, Sun, PiggyBank, Camera, Image as ImageIcon, Banknote, FileSignature, ScrollText, Wrench, Gift, Heart, Wheat } from 'lucide-react';
+import { Calendar, Award, Fingerprint, Calculator, FileText, CreditCard, HeartPulse, GraduationCap, ShieldCheck, Printer, Users, CheckCircle2, Car, CarFront, MapPin, Phone, MessageCircle, Clock, Mail, Info, FileStack, ChevronRight, IdCard, Landmark, Home, Briefcase, Sun, PiggyBank, Camera, Image as ImageIcon, Banknote, FileSignature, ScrollText, Wrench, Gift, Heart, Wheat, HardHat } from 'lucide-react';
 import { ReactNode } from 'react';
 
 export const getIcon = (name: string, className?: string): ReactNode => {
@@ -39,7 +39,8 @@ export const getIcon = (name: string, className?: string): ReactNode => {
     Wrench,
     Gift,
     Heart,
-    Wheat
+    Wheat,
+    HardHat
   };
 
   const IconComponent = icons[name] || CheckCircle2;
