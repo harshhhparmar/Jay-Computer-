@@ -6,6 +6,8 @@ import { Search, MapPin, ChevronDown, ChevronUp, FileText, ShieldCheck, Shield, 
 import { motion } from 'motion/react';
 
 const categoryIcons: Record<string, any> = {
+  'Cards': IdCard,
+  'Government Schemes': ShieldCheck,
   'LIC Services': ShieldCheck,
   'Insurance Services': Shield,
   'Government Schemes & Cards': IdCard,
@@ -126,10 +128,7 @@ const ServiceCard: React.FC<{
   // Map specific service IDs to detailed pages
   const detailedPages: Record<string, string> = {
     'ayushman-card': '/services/ayushman-abha-card',
-    'income-certificate': '/services/certificates',
-    'caste-certificate': '/services/certificates',
-    'domicile-certificate': '/services/certificates',
-    'ews-ncl-certificate': '/services/certificates',
+    'mamlatdar-certificates': '/services/certificates',
     'lic-services': '/services/lic-premium',
     'e-kutir': '/services/e-kutir',
     'e-nirman-scholarship': '/services/e-nirman-scholarship'
