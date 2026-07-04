@@ -63,29 +63,29 @@ export const ENirmanScholarshipPage = () => {
               ))}
             </ul>
 
-            <div className="mt-12 bg-blue-50 rounded-2xl p-6 md:p-8 border border-blue-100">
-              <h3 className="text-2xl font-bold text-blue-900 mb-4 flex items-center gap-3">
-                <FileText className="w-6 h-6 text-blue-500" />
+            <div className="mt-12 bg-blue-50 rounded-2xl p-5 sm:p-6 md:p-8 border border-blue-100">
+              <h3 className="text-xl sm:text-2xl font-bold text-blue-900 mb-4 flex items-center gap-3">
+                <FileText className="w-6 h-6 text-blue-500 shrink-0" />
                 Sample Bonafide Certificate
               </h3>
-              <p className="text-blue-800 mb-6">
+              <p className="text-blue-800 mb-6 text-sm sm:text-base">
                 You must bring an original Bonafide Certificate printed on the school/college letterhead. Below is the exact Gujarati format required by the government:
               </p>
               
-              <div className="bg-white p-6 md:p-10 rounded-xl border border-slate-200 shadow-sm font-gujarati text-slate-800 leading-loose relative overflow-hidden">
+              <div className="bg-white p-5 sm:p-8 md:p-10 rounded-xl border border-slate-200 shadow-sm font-gujarati text-slate-800 leading-[2.5] md:leading-loose relative overflow-hidden text-sm sm:text-base">
                 <div className="absolute top-0 left-0 w-full h-1 bg-blue-500"></div>
-                <h4 className="text-center font-bold text-lg mb-6 underline underline-offset-4">બોનોફાઇડ પ્રમાણપત્ર (સંસ્થાના લેટરપેડ ઉપર)</h4>
+                <h4 className="text-center font-bold text-base sm:text-lg mb-6 underline underline-offset-4">બોનોફાઇડ પ્રમાણપત્ર (સંસ્થાના લેટરપેડ ઉપર)</h4>
                 
-                <p className="text-justify indent-8 mb-4">
-                  આથી પ્રમાણિત કરવામાં આવે છે કે શ્રી/શ્રીમતિ <span className="inline-block w-48 border-b border-slate-400"></span> ના પુત્ર/પુત્રી. કુ. / શ્રીમતિ <span className="inline-block w-48 border-b border-slate-400"></span> શાળા/યુનિવર્સિટી અંતર્ગતની <span className="inline-block w-48 border-b border-slate-400"></span> સંસ્થામાં <span className="inline-block w-32 border-b border-slate-400"></span> કોર્ષનો અભ્યાસ કરે છે. સદર સંપૂર્ણ કોર્ષ કુલ <span className="inline-block w-16 border-b border-slate-400"></span> વર્ષનો છે, જે પૈકી વિદ્યાર્થી વર્ષ ૨૦૨૬/૨૭ માં <span className="inline-block w-24 border-b border-slate-400"></span> વર્ષમાં અભ્યાસ કરે છે તેઓનું વાર્ષિક સત્ર શરુ થયા તારીખ <span className="inline-block w-24 border-b border-slate-400"></span> ૨૦૨૬ છે. સદરહુ વિદ્યાર્થી/વિદ્યાર્થીની અગાઉના વર્ષ/ધોરણમાં નાપાસ થયેલ નથી. અત્રેની સંસ્થાને સરકારશ્રીના તારીખ <span className="inline-block w-32 border-b border-slate-400"></span> ના હુકમ નંબર <span className="inline-block w-32 border-b border-slate-400"></span> થી માન્યતા પ્રાપ્ત છે. વિદ્યાર્થી/વિદ્યાર્થીની દ્વારા અન્ય કોઈ સરકારી વિભાગની સમાન પ્રકારની સહાય લીધેલ નથી.
+                <p className="text-justify indent-4 sm:indent-8 mb-6">
+                  આથી પ્રમાણિત કરવામાં આવે છે કે શ્રી/શ્રીમતિ <span className="inline-block w-24 sm:w-32 md:w-48 border-b border-slate-500"></span> ના પુત્ર/પુત્રી. કુ. / શ્રીમતિ <span className="inline-block w-24 sm:w-32 md:w-48 border-b border-slate-500"></span> શાળા/યુનિવર્સિટી અંતર્ગતની <span className="inline-block w-24 sm:w-32 md:w-48 border-b border-slate-500"></span> સંસ્થામાં <span className="inline-block w-20 sm:w-28 md:w-32 border-b border-slate-500"></span> કોર્ષનો અભ્યાસ કરે છે. સદર સંપૂર્ણ કોર્ષ કુલ <span className="inline-block w-12 sm:w-16 border-b border-slate-500"></span> વર્ષનો છે, જે પૈકી વિદ્યાર્થી વર્ષ ૨૦૨૬/૨૭ માં <span className="inline-block w-16 sm:w-24 border-b border-slate-500"></span> વર્ષમાં અભ્યાસ કરે છે તેઓનું વાર્ષિક સત્ર શરુ થયા તારીખ <span className="inline-block w-16 sm:w-24 border-b border-slate-500"></span> ૨૦૨૬ છે. સદરહુ વિદ્યાર્થી/વિદ્યાર્થીની અગાઉના વર્ષ/ધોરણમાં નાપાસ થયેલ નથી. અત્રેની સંસ્થાને સરકારશ્રીના તારીખ <span className="inline-block w-24 sm:w-32 border-b border-slate-500"></span> ના હુકમ નંબર <span className="inline-block w-24 sm:w-32 border-b border-slate-500"></span> થી માન્યતા પ્રાપ્ત છે. વિદ્યાર્થી/વિદ્યાર્થીની દ્વારા અન્ય કોઈ સરકારી વિભાગની સમાન પ્રકારની સહાય લીધેલ નથી.
                 </p>
                 <p className="mb-12">
-                  વિદ્યાર્થી દ્વારા કરવામાં આવતા <span className="inline-block w-48 border-b border-slate-400"></span> કોર્સની વાર્ષિક ફી રૂ. <span className="inline-block w-32 border-b border-slate-400"></span> છે.
+                  વિદ્યાર્થી દ્વારા કરવામાં આવતા <span className="inline-block w-24 sm:w-40 md:w-48 border-b border-slate-500"></span> કોર્સની વાર્ષિક ફી રૂ. <span className="inline-block w-20 sm:w-28 md:w-32 border-b border-slate-500"></span> છે.
                 </p>
                 
                 <div className="text-right mt-12 pt-8">
-                  <p className="border-b border-dashed border-slate-400 inline-block min-w-[250px] mb-2"></p>
-                  <p className="font-bold text-sm">(આચાર્ય/ડીન/સંસ્થાના વડાની સહી અને સિક્કો)</p>
+                  <p className="border-b border-dashed border-slate-500 inline-block min-w-[200px] sm:min-w-[250px] mb-2"></p>
+                  <p className="font-bold text-xs sm:text-sm">(આચાર્ય/ડીન/સંસ્થાના વડાની સહી અને સિક્કો)</p>
                 </div>
               </div>
             </div>

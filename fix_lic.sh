@@ -1,3 +1,4 @@
+cat << 'INNER_EOF' > src/pages/LICServicesPage.tsx
 import React from 'react';
 import { motion } from 'motion/react';
 import { ShieldCheck, PhoneCall, CheckCircle2, TrendingUp } from 'lucide-react';
@@ -89,3 +90,4 @@ export const LICServicesPage = () => {
     </div>
   );
 };
+INNER_EOF

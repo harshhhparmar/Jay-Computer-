@@ -1,3 +1,4 @@
+cat << 'INNER_EOF' > src/pages/EKutirPage.tsx
 import React from 'react';
 import { motion } from 'motion/react';
 import { CheckCircle2, PhoneCall, Briefcase, Wrench } from 'lucide-react';
@@ -139,3 +140,4 @@ export const EKutirPage = () => {
     </div>
   );
 };
+INNER_EOF

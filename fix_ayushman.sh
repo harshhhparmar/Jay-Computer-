@@ -1,3 +1,4 @@
+cat << 'INNER_EOF' > src/pages/AyushmanCardPage.tsx
 import React from 'react';
 import { motion } from 'motion/react';
 import { CheckCircle2, PhoneCall, ShieldCheck, HeartPulse } from 'lucide-react';
@@ -88,3 +89,4 @@ export const AyushmanCardPage = () => {
     </div>
   );
 };
+INNER_EOF

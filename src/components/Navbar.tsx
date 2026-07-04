@@ -25,7 +25,7 @@ export const Navbar = () => {
 
   const highlightedServices = [
     { name: 'E-Nirman Scholarship', path: '/services/e-nirman-scholarship' },
-    { name: 'Manav Garima Yojana', path: '/services/e-kutir' },
+    { name: 'Manav Kalyan Yojana', path: '/services/e-kutir' },
     { name: 'Ayushman & ABHA Card', path: '/services/ayushman-abha-card' },
     { name: 'Income/Caste Certificates', path: '/services/certificates' },
     { name: 'LIC Premium Support', path: '/services/lic-premium' }

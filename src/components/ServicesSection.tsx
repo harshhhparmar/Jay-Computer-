@@ -126,7 +126,10 @@ const ServiceCard: React.FC<{
   // Map specific service IDs to detailed pages
   const detailedPages: Record<string, string> = {
     'ayushman-card': '/services/ayushman-abha-card',
-    'mamlatdar-certificates': '/services/certificates',
+    'income-certificate': '/services/certificates',
+    'caste-certificate': '/services/certificates',
+    'domicile-certificate': '/services/certificates',
+    'ews-ncl-certificate': '/services/certificates',
     'lic-services': '/services/lic-premium',
     'e-kutir': '/services/e-kutir',
     'e-nirman-scholarship': '/services/e-nirman-scholarship'
