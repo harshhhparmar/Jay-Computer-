@@ -171,8 +171,24 @@ export const services: Service[] = [
     iconName: 'Package',
     descriptionEn: 'Application for Manav Kalyan Yojana / e-Kutir portal schemes.',
     descriptionGu: 'માનવ કલ્યાણ યોજના હેઠળ સાધન સહાય માટેની અરજી.',
-    documentsEn: ['Aadhaar Card', 'Ration Card', 'Income Certificate', 'Bank Passbook'],
-    documentsGu: ['આધાર કાર્ડ', 'રેશન કાર્ડ', 'આવકનો દાખલો', 'બેંક પાસબુક'],
+    documentsEn: [
+      'Aadhar Card and Ration Card', 
+      'Residence Proof (Electricity Bill, Rent Agreement, or Voter ID)', 
+      'Caste Certificate and Annual Income Certificate', 
+      'Bank Passbook & Passport Size Photo', 
+      'Vocational/Trade Training Certificate (If any)', 
+      'E-Shram Card', 
+      'Self-declaration'
+    ],
+    documentsGu: [
+      'આધાર કાર્ડ અને રેશન કાર્ડ', 
+      'રહેઠાણનો પુરાવો (લાઇટ બિલ, ભાડા કરાર, અથવા ચૂંટણી કાર્ડ)', 
+      'જાતિનો દાખલો અને આવકનો દાખલો', 
+      'બેંક પાસબુક અને પાસપોર્ટ સાઇઝ ફોટો', 
+      'તાલીમ લીધી હોય તો તેનું પ્રમાણપત્ર', 
+      'ઈ-શ્રમ કાર્ડ', 
+      'બાહેધરી પત્રક (સોગંદનામું)'
+    ],
     popular: true
   },
 
