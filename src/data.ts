@@ -352,13 +352,13 @@ export const services: Service[] = [
 
 export const siteConfig = {
   shopName: "Jay Computer",
-  phone: "+91 98765 43210",
-  whatsapp: "+919876543210",
-  email: "contact@digitalsevakendra.com",
-  addressEn: "Shop No. 1, Main Market, City Center, Gujarat 380001",
-  addressGu: "દુકાન નંબર ૧, મુખ્ય બજાર, સિટી સેન્ટર, ગુજરાત ૩૮૦૦૦૧",
-  workingHoursEn: "Monday - Saturday: 9:00 AM to 8:00 PM",
-  workingHoursGu: "સોમવાર - શનિવાર: સવારે ૯ થી સાંજે ૮",
+  phone: "+91 99256 58113",
+  whatsapp: "+919925658113",
+  email: "jaycomputer.zerox@gmail.com",
+  addressEn: "Bus Station Road, Halvad 363330",
+  addressGu: "બસ સ્ટેશન રોડ, હળવદ 363330",
+  workingHoursEn: "Sunday - Friday: 9:00 AM to 7:00 PM, Saturday Closed",
+  workingHoursGu: "રવિવાર - શુક્રવાર: સવારે ૯ થી સાંજે ૭, શનિવારે રજા",
   aboutTextEn: "We provide all kinds of online services, government certificate applications, and digital solutions with fast and reliable support.",
   aboutTextGu: "અમે તમામ પ્રકારની ઓનલાઈન સેવાઓ, સરકારી દાખલાની અરજીઓ અને ડિજિટલ સુવિધાઓ ઝડપી અને વિશ્વસનીય સહાય સાથે પ્રદાન કરીએ છીએ."
 };
