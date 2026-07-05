@@ -20,7 +20,7 @@ export const Hero = () => {
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.3 }}
           className="inline-flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1 md:py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-emerald-300 text-[10px] md:text-sm font-bold tracking-wider mb-4 md:mb-6 shadow-sm uppercase"
         >
           <ShieldCheck className="text-emerald-400 w-4 h-4 md:w-5 md:h-5" />
@@ -31,7 +31,7 @@ export const Hero = () => {
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          transition={{ duration: 0.4, delay: 0 }}
           className="text-[28px] sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-2 md:mb-4 leading-[1.1] md:leading-tight max-w-5xl mx-auto"
         >
           All <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Government Services</span> Under One Roof
@@ -41,7 +41,7 @@ export const Hero = () => {
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
           className="max-w-3xl mx-auto text-sm md:text-xl text-indigo-100 font-medium mb-1.5 md:mb-4 leading-snug md:leading-relaxed"
         >
           Fast service, expert guidance, affordable charges, and trusted local support.
@@ -50,7 +50,7 @@ export const Hero = () => {
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.4, delay: 0.15 }}
           className="max-w-3xl mx-auto text-xs md:text-lg text-emerald-300 font-medium font-gujarati mb-5 md:mb-10 leading-snug md:leading-relaxed"
         >
           ઝડપી સેવા, યોગ્ય માર્ગદર્શન, વાજબી દર અને વિશ્વસનીય સ્થાનિક સહાય. તમામ સરકારી અને ઓનલાઈન કામગીરી માટે આજે જ મુલાકાત લો.
@@ -60,26 +60,26 @@ export const Hero = () => {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
           className="grid grid-cols-2 sm:flex sm:flex-row flex-wrap justify-center items-center gap-1.5 md:gap-4 mb-6 md:mb-14"
         >
           <a href={`https://wa.me/${siteConfig.whatsapp}?text=Hello%20${encodeURIComponent(siteConfig.shopName)},%20I%20want%20to%20inquire%20about%20your%20services.`} target="_blank" rel="noopener noreferrer" 
-             className="w-full sm:w-auto flex justify-center items-center gap-1.5 md:gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white px-3 md:px-8 py-3 md:py-4 rounded-xl text-sm sm:text-base md:text-lg font-bold transition-all shadow-lg shadow-[#25D366]/20 hover:shadow-[#25D366]/40 hover:-translate-y-1">
+             className="w-full sm:w-auto flex justify-center items-center gap-1.5 md:gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white px-3 md:px-8 py-3 md:py-4 rounded-xl text-sm sm:text-base md:text-lg font-bold transition-all duration-300 shadow-lg shadow-[#25D366]/20 hover:shadow-[#25D366]/40 hover:-translate-y-1 hover:scale-105 active:scale-95">
             <MessageCircle className="w-4 h-4 md:w-6 md:h-6" /> <span className="truncate">WhatsApp Now</span>
           </a>
           
-          <a href={`tel:${siteConfig.phone.replace(/\\D/g,'')}`} 
-             className="w-full sm:w-auto flex justify-center items-center gap-1.5 md:gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-3 md:px-8 py-3 md:py-4 rounded-xl text-sm sm:text-base md:text-lg font-bold transition-all shadow-lg shadow-indigo-600/20 hover:shadow-indigo-600/40 hover:-translate-y-1 border border-indigo-500">
+          <a href={`tel:${siteConfig.phone.replace(/\D/g,'')}`} 
+             className="w-full sm:w-auto flex justify-center items-center gap-1.5 md:gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-3 md:px-8 py-3 md:py-4 rounded-xl text-sm sm:text-base md:text-lg font-bold transition-all duration-300 shadow-lg shadow-indigo-600/20 hover:shadow-indigo-600/40 hover:-translate-y-1 hover:scale-105 active:scale-95 border border-indigo-500">
             <Phone className="w-4 h-4 md:w-6 md:h-6" /> <span className="truncate">Call Now / કૉલ</span>
           </a>
 
           <a href="#about" 
-             className="w-full sm:w-auto flex justify-center items-center gap-1.5 md:gap-2 bg-white text-indigo-900 hover:bg-slate-100 px-3 md:px-8 py-3 md:py-4 rounded-xl text-sm sm:text-base md:text-lg font-bold transition-all shadow-lg hover:-translate-y-1">
+             className="w-full sm:w-auto flex justify-center items-center gap-1.5 md:gap-2 bg-white text-indigo-900 hover:bg-slate-100 px-3 md:px-8 py-3 md:py-4 rounded-xl text-sm sm:text-base md:text-lg font-bold transition-all duration-300 shadow-lg hover:-translate-y-1 hover:scale-105 active:scale-95">
             <MapPin className="w-4 h-4 md:w-6 md:h-6" /> <span className="truncate">Visit Shop</span>
           </a>
 
           <a href="#services" 
-             className="w-full sm:w-auto flex justify-center items-center gap-1.5 md:gap-2 bg-transparent border-2 border-slate-300/30 hover:bg-white/10 text-white px-3 md:px-8 py-3 md:py-4 rounded-xl text-sm sm:text-base md:text-lg font-bold transition-all hover:-translate-y-1">
+             className="w-full sm:w-auto flex justify-center items-center gap-1.5 md:gap-2 bg-transparent border-2 border-slate-300/30 hover:bg-white/10 text-white px-3 md:px-8 py-3 md:py-4 rounded-xl text-sm sm:text-base md:text-lg font-bold transition-all duration-300 hover:-translate-y-1 hover:scale-105 active:scale-95">
              <span className="truncate">View Services</span>
           </a>
         </motion.div>
@@ -88,7 +88,7 @@ export const Hero = () => {
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.7 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
           className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 md:gap-12 pt-4 md:pt-8 border-t border-white/10 max-w-4xl mx-auto"
         >
           <div className="flex flex-col sm:flex-row items-center gap-2 md:gap-3">
