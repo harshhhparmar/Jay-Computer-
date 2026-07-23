@@ -27,7 +27,7 @@ export const Navbar = () => {
     { name: 'E-Nirman Scholarship', path: '/services/e-nirman-scholarship' },
     { name: 'Manav Kalyan Yojana', path: '/services/e-kutir' },
     { name: 'Ayushman & ABHA Card', path: '/services/ayushman-abha-card' },
-    { name: 'Income/Caste Certificates', path: '/services/certificates' },
+    { name: 'Digital Gujarat Scholarship', path: '/services/digital-gujarat-scholarship' },
     { name: 'LIC Premium Support', path: '/services/lic-premium' }
   ];
 

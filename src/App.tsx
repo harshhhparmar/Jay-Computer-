@@ -20,6 +20,7 @@ import { CertificatesPage } from './pages/CertificatesPage';
 import { LICServicesPage } from './pages/LICServicesPage';
 import { EKutirPage } from './pages/EKutirPage';
 import { ENirmanScholarshipPage } from './pages/ENirmanScholarshipPage';
+import { DigitalGujaratScholarshipPage } from './pages/DigitalGujaratScholarshipPage';
 
 const Home = () => (
   <main>
@@ -45,6 +46,7 @@ export default function App() {
             <Route path="/services/lic-premium" element={<LICServicesPage />} />
             <Route path="/services/e-kutir" element={<EKutirPage />} />
             <Route path="/services/e-nirman-scholarship" element={<ENirmanScholarshipPage />} />
+            <Route path="/services/digital-gujarat-scholarship" element={<DigitalGujaratScholarshipPage />} />
           </Routes>
         </div>
         <Footer />

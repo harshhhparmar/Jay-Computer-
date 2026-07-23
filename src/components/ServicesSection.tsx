@@ -97,7 +97,10 @@ export const ServicesSection = () => {
   const popularServices = useMemo(() => {
     return [...services]
       .map(service => {
-        const baseScore = service.popular ? 5 : 0;
+        let baseScore = service.popular ? 5 : 0;
+        if (service.id === 'digital-gujarat-scholarship') {
+          baseScore = 100;
+        }
         const clicks = clickCounts[service.id] || 0;
         return {
           ...service,
@@ -127,11 +130,13 @@ const ServiceCard: React.FC<{
 
   // Map specific service IDs to detailed pages
   const detailedPages: Record<string, string> = {
-    'ayushman-card': '/services/ayushman-abha-card',
-    'mamlatdar-certificates': '/services/certificates',
-    'lic-services': '/services/lic-premium',
+    'ayushman-abha-card': '/services/ayushman-abha-card',
+    'income-certificate': '/services/certificates',
+    'caste-certificate': '/services/certificates',
+    'lic-premium': '/services/lic-premium',
     'e-kutir': '/services/e-kutir',
-    'e-nirman-scholarship': '/services/e-nirman-scholarship'
+    'e-nirman-scholarship': '/services/e-nirman-scholarship',
+    'digital-gujarat-scholarship': '/services/digital-gujarat-scholarship'
   };
 
   const pageLink = detailedPages[service.id];

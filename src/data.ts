@@ -13,7 +13,7 @@ export const services: Service[] = [
     descriptionGu: 'આવકનો દાખલો સ્કોલરશિપ, એડમિશન વગેરે માટે જરૂરી છે.',
     documentsEn: ["Form and Photo", "Ration Card Copy", "Talati\'s Income Certificate", "Last Light Bill", "Aadhaar Card"],
     documentsGu: ["ફોર્મ અને ફોટો", "રેશન કાર્ડની નકલ", "તલાટીનો આવકનો દાખલો", "છેલ્લું લાઈટ બિલ", "આધારકાર્ડ"],
-    popular: true
+    popular: false
   },
   {
     id: 'caste-certificate',
@@ -26,7 +26,7 @@ export const services: Service[] = [
     descriptionGu: 'શૈક્ષણિક અને સરકારી હેતુઓ માટે જાતિનો દાખલો.',
     documentsEn: ["Form and Photo", "Ration Card Copy", "School Leaving Certificate", "Father/Brother/Sister\'s School Leaving", "Last Light Bill", "Talati\'s Caste Certificate", "Aadhaar Card"],
     documentsGu: ["ફોર્મ અને ફોટો", "રેશન કાર્ડની નકલ", "સ્કુલ લીવીંગ સર્ટી", "પિતા / ભાઈ / બહેનનું સ્કુલ લીવીંગ", "છેલ્લું લાઈટ બિલ", "તલાટીનો જાતિનો દાખલો", "આધારકાર્ડ"],
-    popular: true
+    popular: false
   },
   {
     id: 'domicile-certificate',
@@ -215,8 +215,30 @@ export const services: Service[] = [
     iconName: 'GraduationCap',
     descriptionEn: 'Online scholarship application for school/college students.',
     descriptionGu: 'શાળા/કોલેજના વિદ્યાર્થીઓ માટે ઓનલાઈન શિષ્યવૃત્તિ અરજી.',
-    documentsEn: ['Aadhaar Card', 'Bank Passbook', 'Last Year Marksheet', 'Income Certificate', 'Caste Certificate', 'Fee Receipt'],
-    documentsGu: ['આધાર કાર્ડ', 'બેંક પાસબુક', 'ગયા વર્ષની માર્કશીટ', 'આવકનો દાખલો', 'જાતિનો દાખલો', 'ફી પહોંચ'],
+    documentsEn: [
+      'Aadhaar Card', 
+      'Ration Card',
+      'Std 10, 12 & Last Marksheet', 
+      'School Leaving Certificate (L.C.)', 
+      'Caste Certificate', 
+      'Income Certificate', 
+      'Bank Passbook', 
+      'Passport Size Photo', 
+      'School/College Fee Receipt', 
+      'Bonafide Certificate (if required)'
+    ],
+    documentsGu: [
+      'આધાર કાર્ડ', 
+      'રેશન કાર્ડ',
+      'ધો. ૧૦, ૧૨ અને છેલ્લી માર્કશીટ', 
+      'એલ.સી.', 
+      'જાતિનો દાખલો', 
+      'આવકનો દાખલો', 
+      'બેંક પાસબુક', 
+      'ફોટો', 
+      'શાળા કે કોલેજની ફી ભર્યાની પાવતી', 
+      'બોનોફાઇડ (જો જરૂરી હોય તો)'
+    ],
     popular: true
   },
   {
